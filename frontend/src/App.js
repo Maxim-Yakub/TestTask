@@ -1,57 +1,20 @@
-// import logo from './logo.svg';
-// import './App.css';
-//
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-import React from "react";
-class App extends React.Component {
-  state = {
-    products: []
-  };
+import Home from './Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Catalogue from "./Catalogue";
 
-  async componentDidMount() {
-    const response = await fetch('/api/products');
-    const body = await response.json();
-    this.setState({products: body});
-  }
-
+class App extends Component {
   render() {
-    const {products} = this.state;
     return (
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <div className="App-intro">
-              <h2>Clients</h2>
-              {products.map(product =>
-                  <div key={product.id}>
-                    {product.name} ({product.description})
-                  </div>
-              )}
-            </div>
-          </header>
-        </div>
-    );
+        <Router>
+          <Switch>
+            <Route path='/' exact={true} component={Home}/>
+            {/*<Route path='/clients' exact={true} component={ClientList}/>*/}
+            <Route path='/catalogue' exact={true} component={Catalogue}/>
+          </Switch>
+        </Router>
+    )
   }
 }
 
