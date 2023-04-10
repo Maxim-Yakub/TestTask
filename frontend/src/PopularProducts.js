@@ -16,17 +16,14 @@ class PopularProducts extends Component {
         const {products} = this.state;
         return (
                 <div className="App">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
                         <div className="App-intro">
-                            <h2>Clients</h2>
+                            <h2> ACME inc </h2>
                             {products.map(product =>
                                 <div key={product.id}>
                                     {product.name} ({product.description})
                                 </div>
                             )}
                         </div>
-                    </header>
                 </div>
         );
     }

@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { Button, ButtonGroup, Container, Table } from 'reactstrap';
+import React, {Component} from 'react';
 import AppNavbar from './AppNavbar';
-import { Link } from 'react-router-dom';
 import logo from "./logo.svg";
 
 class Catalogue extends Component {
@@ -24,7 +22,7 @@ class Catalogue extends Component {
                     <header className="App-header">
                         <img src={logo} className="App-logo" alt="logo" />
                         <div className="App-intro">
-                            <h2>Clients</h2>
+                            <h2>Products</h2>
                             {products.map(product =>
                                 <div key={product.id}>
                                     {product.name} ({product.description})
