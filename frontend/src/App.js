@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
-import Home from './Home';
-import { BrowserRouter as Router, Route, Switch, useNavigate } from 'react-router-dom';
-import Catalogue from "./Catalogue";
-
+import React, {Component} from 'react';
+import './styles/App.css';
+import Home from './pages/Home';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Catalogue from "./pages/Catalogue";
 
 
 class App extends Component {
@@ -13,7 +12,6 @@ class App extends Component {
         <Router>
           <Switch>
             <Route path='/' exact={true} component={Home}/>
-            {/*<Route path='/clients' exact={true} component={ClientList}/>*/}
             <Route path='/catalogue'  exact={true} component={Catalogue}/>
           </Switch>
         </Router>
@@ -21,6 +19,5 @@ class App extends Component {
   }
 
 }
-
 
 export default App;

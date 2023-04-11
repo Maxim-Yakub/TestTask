@@ -1,11 +1,9 @@
 package com.example.testtask.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.File;
 import java.math.BigDecimal;
 
 @Entity
@@ -24,7 +22,9 @@ public class Product {
 
     private BigDecimal prise;
 
-    private File image;
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private FileEntity image;
 
     private Boolean popular;
 
